@@ -15,3 +15,10 @@ def run_demo():
     latency_ms = (time.perf_counter() - start_time) * 1000
 
     
+print("=== NeuraFin LNN Core Demo ===")
+    print(f"Inference Latency: {latency_ms:.2f} ms")
+    print("Continuous ODE Anomaly Scores:")
+    print(anomaly_scores.squeeze().numpy())
+
+if __name__ == "__main__":
+    run_demo()

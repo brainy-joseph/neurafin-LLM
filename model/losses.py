@@ -9,4 +9,14 @@ class ContinuousAnomalyLoss(nn.Module):
         self.bce = nn.BCELoss()
         self.smoothness_weight = smoothness_weight
 
+def forward(self, predictions: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+        bce_loss = self.bce(predictions, targets)
+        
+        # First-order temporal derivative penalty (dy/dt dynamic smoothness check)
+        temporal_diff = predictions[:, 1:] - predictions[:, :-1]
+        smoothness_penalty = torch.mean(temporal_diff ** 2)
+        
+        total_loss = bce_loss + (self.smoothness_weight * smoothness_penalty)
+        return total_loss
+
     

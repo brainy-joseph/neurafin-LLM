@@ -14,5 +14,16 @@ def train_model(epochs: int = 5):
         # Simulated batch (32 samples, 10 time steps, 4 features)
         inputs = torch.randn(32, 10, 4)
         targets = torch.randint(0, 2, (32, 10, 1)).float()
-
+        optimizer.zero_grad()
+        outputs = model(inputs)
+        loss = criterion(outputs, targets)
+        loss.backward()
         
+        # Clip gradients for numerical ODE stability
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+        optimizer.step()
+
+        print(f"Epoch [{epoch}/{epochs}] | Loss: {loss.item():.4f}")
+
+if __name__ == "__main__":
+    train_model()

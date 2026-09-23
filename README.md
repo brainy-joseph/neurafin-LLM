@@ -1,4 +1,4 @@
-# NeuraFin: Continuous-Time Liquid Neural Network Engine
+# NeuraFin: Continuous-Time Liquid Neural Network Engine (In Progress)
 
 NeuraFin is a CPU-native, neuromorphic financial engine for continuous anomaly detection in enterprise audit workflows.
 

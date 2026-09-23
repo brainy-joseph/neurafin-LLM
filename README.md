@@ -2,7 +2,7 @@
 
 NeuraFin is a CPU-native, neuromorphic financial engine for continuous anomaly detection in enterprise audit workflows.
 
-## Research Foundations
+## Research Foundations 
 - **Liquid Time-Constant (LTC) Networks:** Hasani et al. (MIT CSAIL)
 - **Neural Ordinary Differential Equations (ODEs):** Chen et al.
 

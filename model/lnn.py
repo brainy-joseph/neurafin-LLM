@@ -12,3 +12,7 @@ class NeuraFinLNN(nn.Module):
         self.ltc = LTC(input_dim, wiring, batch_first=True)
 
     
+def forward(self, x):
+        # x shape: (batch_size, sequence_length, features)
+        out, _ = self.ltc(x)
+        return torch.sigmoid(out)
